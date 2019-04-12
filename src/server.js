@@ -2,24 +2,11 @@
 
 const express = require('express');
 const cors = require('cors');
-const cuid = require('cuid');
 
-const { checkAdopter } = require('./middleware');
+
 const { CLIENT_ORIGIN } = require('./config');
 const Queue = require('./Queue');
 
-
-const debug = function (app) {
-
-  console.log({
-    adopters : app.get('adopters'),
-    cats     : app.get('cats'),
-    dogs     : app.get('dogs'),
-  });
-};
-
-
-const app = express();
 
 const cats     = new Queue();
 const dogs     = new Queue();
@@ -45,6 +32,8 @@ dogs.enqueue({
   story: 'Owner Passed away'
 });
 
+const app = express();
+
 app.set('cats', cats);
 app.set('dogs', dogs);
 app.set('adopters', adopters);
@@ -54,59 +43,6 @@ app.use(
     origin: CLIENT_ORIGIN
   })
 );
-
-app.get('/api/cat', (req, res, next) => {
-  return res.json(cats.first.value);
-});
-
-app.delete('/api/cat', (req, res, next) => {
-  cats.dequeue();
-  return res.sendStatus(204);
-});
-
-app.get('/api/dog', (req, res, next) => {
-  return res.json(dogs.first.value);
-});
-
-app.delete('/api/dog', (req, res, next) => {
-  dogs.dequeue();
-  return res.sendStatus(204);
-});
-
-app.get('/api/getToken', (req, res, next) => {
-
-  const token = cuid();
-  req.app.get('adopters').enqueue(token);
-
-  debug(app);
-
-  res.status(200).json({ token });
-});
-
-app.post('/api/adopt', checkAdopter, express.json(), (req, res, next) => {
-
-  let adopter = null;
-  let cat     = null;
-  let dog     = null;
-
-  adopter = req.app.get('adopters').dequeue();
-
-  if (req.body.adoptedCat) {
-    cat = req.app.get('cats').dequeue();
-  }
-
-  if (req.body.AdoptedDog) {
-    dog = req.app.get('dogs').dequeue();
-  }
-
-  debug(app);
-
-  // POST.username has adopted cat.name and dog.name
-  // console.log({ adopter, cat, dog });
-
-  res.status(200).json({ message: 'Congratulations, adoption successful' });
-});
-
 
 // Catch-all Error handler
 // Add NODE_ENV check to prevent stacktrace leak
