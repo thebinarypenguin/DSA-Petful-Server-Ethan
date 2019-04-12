@@ -13,43 +13,43 @@ cats.enqueue({
 });
 
 cats.enqueue({
-  imageURL: 'https://images.unsplash.com/photo-1505481354248-2ba5d3b9338e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-  imageDescription: 'Cat 2',
-  name: 'Fluffy',
-  sex: 'Female',
-  age: 2,
-  breed: 'Bengal',
-  story: 'Thrown on the street'
+  imageURL: 'https://images.unsplash.com/photo-1539045209481-f385a84f81d1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
+  imageDescription: 'Cat 5',
+  name: 'Garfield',
+  sex: 'Male',
+  age: 10,
+  breed: 'Tabby',
+  story: 'Lazy, fat, and cynical. Hates Mondays and will eat lasagna and sleep all day'
 });
 
 cats.enqueue({
   imageURL: 'https://images.unsplash.com/photo-1548546738-8509cb246ed3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
   imageDescription: 'Cat 3',
-  name: 'Fluffy',
-  sex: 'Female',
-  age: 2,
-  breed: 'Bengal',
-  story: 'Thrown on the street'
+  name: 'Stinky',
+  sex: 'Male',
+  age: 7,
+  breed: 'Persian',
+  story: 'Found in the dumpster, loves to eat garbage'
 });
 
 cats.enqueue({
   imageURL: 'https://images.unsplash.com/photo-1457410129867-5999af49daf7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
   imageDescription: 'Cat 4',
-  name: 'Fluffy',
-  sex: 'Female',
-  age: 2,
-  breed: 'Bengal',
-  story: 'Thrown on the street'
+  name: 'Grumpy',
+  sex: 'Male',
+  age: 6,
+  breed: 'Burmese',
+  story: 'Kicked out of last home for being too grumpy'
 });
 
 cats.enqueue({
-  imageURL: 'https://images.unsplash.com/photo-1539045209481-f385a84f81d1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60',
-  imageDescription: 'Cat 5',
-  name: 'Fluffy',
+  imageURL: 'https://images.unsplash.com/photo-1505481354248-2ba5d3b9338e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
+  imageDescription: 'Cat 2',
+  name: 'Duffy',
   sex: 'Female',
-  age: 2,
-  breed: 'Bengal',
-  story: 'Thrown on the street'
+  age: 5,
+  breed: 'Siamese',
+  story: 'Hit by a car, but still has 8 more lives'
 });
 
 module.exports = cats;
