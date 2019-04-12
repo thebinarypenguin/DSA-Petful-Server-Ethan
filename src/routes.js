@@ -33,7 +33,7 @@ router.delete('/api/dog', (req, res, next) => {
   return res.sendStatus(204);
 });
 
-router.get('/api/getToken', (req, res, next) => {
+router.get('/api/token', (req, res, next) => {
 
   const token = cuid();
   req.app.get('adopters').enqueue(token);
