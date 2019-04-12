@@ -14,7 +14,7 @@ setInterval(() => {
   if (adopters.first) {
     adopters.dequeue();
   }
-}, 30 * 1000);
+}, 60 * 1000);
 
 const app = express();
 
