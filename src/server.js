@@ -10,6 +10,12 @@ const cats     = require('./cats');
 const dogs     = require('./dogs');
 const adopters = require('./adopters');
 
+setInterval(() => {
+  if (adopters.first) {
+    adopters.dequeue();
+  }
+}, 30 * 1000);
+
 const app = express();
 
 app.set('cats', cats);
