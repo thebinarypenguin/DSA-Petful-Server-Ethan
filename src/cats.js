@@ -3,8 +3,48 @@ const Queue = require('./Queue');
 const cats = new Queue();
 
 cats.enqueue({
-  imageURL: 'https://assets3.thrillist.com/v1/image/2622128/size/tmg-slideshow_l.jpg',
-  imageDescription: 'Orange bengal cat with black stripes lounging on concrete.',
+  imageURL: 'cat-1.jpg',
+  imageDescription: 'Cat 1',
+  name: 'Fluffy',
+  sex: 'Female',
+  age: 2,
+  breed: 'Bengal',
+  story: 'Thrown on the street'
+});
+
+cats.enqueue({
+  imageURL: 'cat-2.jpg',
+  imageDescription: 'Cat 2',
+  name: 'Fluffy',
+  sex: 'Female',
+  age: 2,
+  breed: 'Bengal',
+  story: 'Thrown on the street'
+});
+
+cats.enqueue({
+  imageURL: 'cat-3.png',
+  imageDescription: 'Cat 3',
+  name: 'Fluffy',
+  sex: 'Female',
+  age: 2,
+  breed: 'Bengal',
+  story: 'Thrown on the street'
+});
+
+cats.enqueue({
+  imageURL: 'cat-4.jpg',
+  imageDescription: 'Cat 4',
+  name: 'Fluffy',
+  sex: 'Female',
+  age: 2,
+  breed: 'Bengal',
+  story: 'Thrown on the street'
+});
+
+cats.enqueue({
+  imageURL: 'cat-5.jpg',
+  imageDescription: 'Cat 5',
   name: 'Fluffy',
   sex: 'Female',
   age: 2,
