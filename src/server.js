@@ -5,6 +5,7 @@ const cors = require('cors');
 
 
 const { CLIENT_ORIGIN } = require('./config');
+const routes = require('./routes');
 const Queue = require('./Queue');
 
 
@@ -43,6 +44,8 @@ app.use(
     origin: CLIENT_ORIGIN
   })
 );
+
+app.use('/', routes);
 
 // Catch-all Error handler
 // Add NODE_ENV check to prevent stacktrace leak

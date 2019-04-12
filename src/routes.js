@@ -53,16 +53,15 @@ router.post('/api/adopt', checkAdopter, express.json(), (req, res, next) => {
 
   if (req.body.adoptedCat) {
     cat = req.app.get('cats').dequeue();
+    console.log(`${cat.name} was adopted by ${adopter.value}`);
   }
 
-  if (req.body.AdoptedDog) {
+  if (req.body.adoptedDog) {
     dog = req.app.get('dogs').dequeue();
+    console.log(`${dog.name} was adopted by ${adopter.value}`);
   }
 
-  debug(req.app);
-
-  // POST.username has adopted cat.name and dog.name
-  // console.log({ adopter, cat, dog });
+  // debug(req.app);
 
   res.status(200).json({ message: 'Congratulations, adoption successful' });
 });
