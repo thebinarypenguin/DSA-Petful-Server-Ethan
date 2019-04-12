@@ -6,7 +6,7 @@ const cuid = require('cuid');
 
 const { checkAdopter } = require('./middleware');
 const { CLIENT_ORIGIN } = require('./config');
-const { Queue } = require('./queue');
+const Queue = require('./Queue');
 
 
 const debug = function (app) {
@@ -56,7 +56,7 @@ app.use(
 );
 
 app.get('/api/cat', (req, res, next) => {
-  return res.json(cats.peek());
+  return res.json(cats.first.value);
 });
 
 app.delete('/api/cat', (req, res, next) => {
@@ -65,7 +65,7 @@ app.delete('/api/cat', (req, res, next) => {
 });
 
 app.get('/api/dog', (req, res, next) => {
-  return res.json(dogs.peek());
+  return res.json(dogs.first.value);
 });
 
 app.delete('/api/dog', (req, res, next) => {

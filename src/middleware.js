@@ -9,7 +9,7 @@ const checkAdopter = function (req, res, next) {
   }
 
   const token = authorization.slice(7);
-  const activeAdopter = req.app.get('adopters').peek();
+  const activeAdopter = req.app.get('adopters').first.value;
 
   // IF user isn't active
   if (token !== activeAdopter) {
