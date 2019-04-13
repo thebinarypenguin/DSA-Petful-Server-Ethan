@@ -18,7 +18,7 @@ router.get('/api/cat', (req, res, next) => {
   const currentCat = req.app.get('cats').first;
 
   if (!currentCat || !currentCat.value) {
-    return res.status(404).json({ message: 'There are currently no cats available for adoption' });
+    return res.status(204).json({ message: 'There are currently no cats available for adoption' });
   }
 
   return res.status(200).json(currentCat.value);
@@ -27,7 +27,7 @@ router.get('/api/cat', (req, res, next) => {
 router.delete('/api/cat', checkAdopter, express.json(), (req, res, next) => {
 
   if (!req.app.get('cats').first) {
-    return res.status(404).json({ message: 'There are currently no cats available for adoption' });
+    return res.status(204).json({ message: 'There are currently no cats available for adoption' });
   }
 
   const cat = req.app.get('cats').dequeue();
@@ -37,10 +37,11 @@ router.delete('/api/cat', checkAdopter, express.json(), (req, res, next) => {
 
 router.get('/api/dog', (req, res, next) => {
 
+
   const currentDog = req.app.get('dogs').first;
 
   if (!currentDog || !currentDog.value) {
-    return res.status(404).json({ message: 'There are currently no dogs available for adoption' });
+    return res.status(204).json({ message: 'There are currently no dogs available for adoption' });
   }
 
   return res.status(200).json(currentDog.value);
@@ -49,7 +50,7 @@ router.get('/api/dog', (req, res, next) => {
 router.delete('/api/dog', checkAdopter, express.json(), (req, res, next) => {
 
   if (!req.app.get('dogs').first) {
-    return res.status(404).json({ message: 'There are currently no dogs available for adoption' });
+    return res.status(204).json({ message: 'There are currently no dogs available for adoption' });
   }
 
   const dog = req.app.get('dogs').dequeue();
