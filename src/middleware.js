@@ -1,11 +1,11 @@
 
-const checkAdopter = function (req, res, next) {
+const isActiveUser = function (req, res, next) {
 
   const authorization = req.get('Authorization');
 
   // If no Authorization header
   if (!authorization) {
-    return res.status(401).json({ error: 'Authorization not provided' });
+    return res.status(401).json({ message: 'Authorization not provided' });
   }
 
   const token = authorization.slice(7);
@@ -19,20 +19,20 @@ const checkAdopter = function (req, res, next) {
 
   // IF user isn't active
   if (token !== activeAdopter) {
-    return res.status(400).json({ error: 'It\'s not your turn' });
+    return res.status(400).json({ message: 'It\'s not your turn' });
   }
 
   req.app.set('adopterId', token);
   next();
 };
 
-const checkAuth = function (req, res, next) {
+const isAuthorizedUser = function (req, res, next) {
 
   const authorization = req.get('Authorization');
 
   // If no Authorization header
   if (!authorization) {
-    return res.status(401).json({ error: 'Authorization not provided' });
+    return res.status(401).json({ message: 'Authorization not provided' });
   }
 
   const token = authorization.slice(7);
@@ -45,11 +45,11 @@ const checkAuth = function (req, res, next) {
   }
 
   req.app.set('adopterId', token);
-  next();
 
+  next();
 };
 
 module.exports = {
-  checkAdopter,
-  checkAuth,
+  isActiveUser,
+  isAuthorizedUser,
 };
