@@ -3,7 +3,7 @@
 const express = require('express');
 const cors = require('cors');
 
-const { CLIENT_ORIGIN } = require('./config');
+const { CLIENT_ORIGIN, PORT } = require('./config');
 const routes = require('./routes');
 
 const cats     = require('./cats');
@@ -40,6 +40,6 @@ app.use(function (err, req, res, next) {
   });
 });
 
-app.listen(8080,()=>{
-  console.log('Serving on 8080');
+app.listen(PORT,()=>{
+  console.log(`Serving on ${PORT}`);
 });
