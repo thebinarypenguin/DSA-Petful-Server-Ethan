@@ -88,4 +88,10 @@ router.get('/api/position', checkAuth, (req, res, next) => {
   return res.status(200).json({ position });
 });
 
+router.get('/reset', (req, res, next) => {
+  req.app.get('cats').populate();
+  req.app.get('dogs').populate();
+  return res.status(200).end();
+});
+
 module.exports = router;
