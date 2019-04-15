@@ -2,11 +2,11 @@ Petful
 
 Created by Ethan Zimmerman and William Wong
 
-[Live Demo](#)
+[Live Demo](https://thebinarypenguin-petful.now.sh/)
 
-[Client Repo](#)
+[Client Repo](https://github.com/thebinarypenguin/DSA-Petful-Client-Ethan)
 
-[Server Repo](#)
+[Server Repo](https://github.com/thebinarypenguin/DSA-Petful-Server-Ethan)
 
 ## Summary
 
